@@ -11,7 +11,7 @@ Dans mon cas le premier qui existe est **/etc/mysql/my.cnf**, qui est un lien ve
 # Export / Import en SQL
 ```sh
 # ATTENTION : ici les commandes sont exécutées depuis l'hôte en root qui n'a pas besoin de s'authentifier (-u root -p)
-#  aussi, `pv` permet de voir la progression et gzip/gunzip permettent de compresser/décompresser (dépendances)
+#  aussi, `pv` permet de voir la progression et `gzip`/`gunzip` permettent de compresser/décompresser (dépendances)
 
 # export compressé
 root@host:~# mysqldump glpidb | gzip > $(date +%Y-%m-%d).glpi.backup.sql.gz
