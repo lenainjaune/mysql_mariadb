@@ -23,7 +23,6 @@ root@host:~# mysql -e "drop database glpidb ; create database glpidb"
 
 # import de la BDD non compressée
 root@host:~# pv 2021-04-29.glpi.backup.sql | mysql glpidb
-6,97MiO 0:05:15 [22,6KiB/s] [================================>] 100%
 
 # import de la BDD compressée
 root@host:~# pv 2021-04-29.glpi.backup.sql | gunzip | mysql glpidb
