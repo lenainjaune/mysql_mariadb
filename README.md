@@ -10,6 +10,9 @@ Sous la section "Default options are read...", il y a une liste de fichiers de c
 Dans mon cas le premier qui existe est **/etc/mysql/my.cnf**, qui est un lien vers **/etc/mysql/mariadb.cnf** (```readlink -f /etc/mysql/my.cnf```), qui indique qu'il y a une inclusion (**!includedir**) des dossiers **/etc/mysql/conf.d/** et **/etc/mysql/mariadb.conf.d/**, ce dernier contenant, entre autre, le fichier **50-server.cnf** qui contient le GROS de la configuration (port, localisation de la base de données, etc.)
 # Export / Import en SQL
 ```sh
+# ATTENTION : ici les commandes sont exécutées depuis l'hôte en root qui n'a pas besoin de s'authentifier (-u root -p)
+#  aussi, `pv` permet de voir la progression et gzip/gunzip permettent de compresser/décompresser (dépendances)
+
 # export compressé
 root@host:~# mysqldump glpidb | gzip > $(date +%Y-%m-%d).glpi.backup.sql.gz
 
