@@ -42,8 +42,8 @@ root@host:~# mysql -e "desc glpidb.glpi_notimportedemails"
 +-------------------+--------------+------+-----+---------+----------------+
 
 # définition d'une table en dump SQL
-# ATTENTION : ne PAS importer directement sans les /*! 
-#  car ce sont des commandes SQL pour MySQL et des des commentaires pour les autres SGBDR
+# ATTENTION : ne PAS importer directement sans les /*! ... */ (commentaires C améliorés)
+#  car ce sont des commandes SQL pour MySQL et des commentaires pour les autres SGBDR
 #  https://dev.mysql.com/doc/refman/8.0/en/comments.html
 root@host:~# mysqldump glpidb glpi_notimportedemails | grep -Ev "^(--|/\*\!|$)"
 DROP TABLE IF EXISTS `glpi_notimportedemails`;
